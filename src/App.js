@@ -14,6 +14,7 @@ import { LoadingSpinner } from "./components/LoadingSpinner";
 import SpinnerContextProvider, {
   LoadingSpinnerContext,
 } from "./components/SpinnerContext";
+import { Toaster } from "react-hot-toast";
 
 const Home = lazy(() => import("./pages/Home"));
 const OurServices = lazy(() => import("./pages/OurServices"));
@@ -57,6 +58,7 @@ function App() {
         <LoadingSpinnerContext />
         <Suspense fallback={<LoadingSpinner />}>
           <ScrollToTop />
+          <Toaster position="top-center" />
           <NormalizeSlash>
             <WhatsAppIcon />
             <Routes>

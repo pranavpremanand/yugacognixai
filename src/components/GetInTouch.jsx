@@ -1,6 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-import { allServices } from "../constants";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { allServices, clientDetails } from "../constants";
 import { BiCaretRight } from "react-icons/bi";
+import { SpinnerContext } from "./SpinnerContext";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const GetInTouch = () => {
   return (
@@ -29,6 +33,23 @@ export const InquiryForm = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(allServices[0].title);
   const dropdownRef = useRef(null);
+  const { setSpinner } = useContext(SpinnerContext);
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    mode: "all",
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    },
+  });
 
   useEffect(() => {
     // Handler for clicking outside of the dropdown
@@ -46,6 +67,46 @@ export const InquiryForm = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  // handle form submit click
+  const handleFormSubmit = async (values) => {
+    setSpinner(true);
+
+    var emailBody = "Name: " + values.name + "\n\n";
+    emailBody += "Email: " + values.email + "\n\n";
+    emailBody += "Phone: " + values.phone + "\n\n";
+    emailBody += "Service Needed: " + selectedService + "\n\n";
+    emailBody += "Message:\n" + values.message;
+
+    // Construct the request payload
+    var payload = {
+      to: clientDetails.email,
+      subject: values.subject,
+      body: emailBody,
+    };
+
+    await fetch("https://smtp-api-tawny.vercel.app/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        if (res.error) {
+          toast.error(res.error);
+        } else {
+          toast.success("Email sent successfully");
+          reset();
+          // navigate("/thank-you");
+        }
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      })
+      .finally(() => setSpinner(false));
+  };
   return (
     <div data-aos="fade-left" className="flex flex-col items-start gap-3 group">
       <p className="gradient-text uppercase">Let's connect</p>
@@ -54,7 +115,7 @@ export const InquiryForm = () => {
           Connect With Our Team to Get Started!
         </h2>
         <form
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit(handleFormSubmit)}
           className="grid grid-cols-1 gap-3 mt-3"
         >
           <div className="grid lg:grid-cols-2 gap-3">
@@ -63,20 +124,37 @@ export const InquiryForm = () => {
               <input
                 type="text"
                 className="w-full outline-none p-3 rounded-lg  "
-                required
                 autoComplete="off"
                 placeholder="Enter your name"
+                {...register("name", {
+                  required: "Full name is required",
+                  validate: (val) => {
+                    if (val.trim() !== "") {
+                      return true;
+                    } else {
+                      return "Full name is required";
+                    }
+                  },
+                })}
               />
+              <p className="text-blue-900">{errors.name?.message}</p>
             </div>
             <div className="">
               <label className="text-white">Email</label>
               <input
                 type="email"
                 className="w-full outline-none p-3 rounded-lg  "
-                required
                 autoComplete="off"
                 placeholder="Enter your email"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                    message: "Entered email is invalid",
+                  },
+                })}
               />
+              <p className="text-blue-900">{errors.email?.message}</p>
             </div>
           </div>
           <div className="grid lg:grid-cols-2 gap-3">
@@ -85,10 +163,19 @@ export const InquiryForm = () => {
               <input
                 type="text"
                 className="w-full outline-none p-3 rounded-lg  "
-                required
-                autoComplete="off"
                 placeholder="Enter subject"
+                {...register("subject", {
+                  required: "Subject is required",
+                  validate: (val) => {
+                    if (val.trim() !== "") {
+                      return true;
+                    } else {
+                      return "Subject is required";
+                    }
+                  },
+                })}
               />
+              <p className="text-blue-900">{errors.subject?.message}</p>
             </div>
             <div className="">
               <label className="text-white">Phone Number</label>
@@ -97,7 +184,15 @@ export const InquiryForm = () => {
                 className="w-full outline-none p-3 rounded-lg  "
                 autoComplete="off"
                 placeholder="Enter your phone number"
+                {...register("phone", {
+                  required: "Phone number is required",
+                  pattern: {
+                    value: /^\+?[0-9]{10,15}$/,
+                    message: "Entered phone number is invalid",
+                  },
+                })}
               />
+              <p className="text-blue-900">{errors.phone?.message}</p>
             </div>
           </div>
           <div className="flex flex-col relative" ref={dropdownRef}>
@@ -142,11 +237,25 @@ export const InquiryForm = () => {
               rows="4"
               placeholder="Enter your message here"
               className="w-full outline-none p-3 rounded-lg  "
-              required
               autoComplete="off"
+              {...register("message", {
+                required: "Message is required",
+                validate: (val) => {
+                  if (val.trim() !== "") {
+                    return true;
+                  } else {
+                    return "Message is required";
+                  }
+                },
+              })}
             />
+            <p className="text-blue-900">{errors.message?.message}</p>
           </div>
-          <button className="mt-4 bg-background border border-white text-primary px-5 py-3 rounded-full hover:bg-primary hover:text-white hover:-translate-y-1 duration-300 transition-all">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="mt-4 bg-background border border-white text-primary px-5 py-3 rounded-full hover:bg-primary hover:text-white hover:-translate-y-1 duration-300 transition-all"
+          >
             Send Message
           </button>
         </form>

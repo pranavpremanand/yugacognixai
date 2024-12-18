@@ -34,9 +34,10 @@ import client4 from "./assets/client-4.png";
 
 // client details
 export const clientDetails = {
-  phone: "917989856338",
+  phone: "919765728555",
+  email: "info@yugacognixai.com",
   address:
-    "101, UNTI 101 OXFORD TOWERS, 139 HAL OLD AIRPORT ROAD, KODIHALLI, - 560008",
+    "5th A Cross Rd, R.K Colony, Manjunath Colony, 2nd Phase, J. P. Nagar, Bengaluru, Karnataka",
 };
 
 // landing page header links
