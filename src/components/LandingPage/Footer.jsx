@@ -4,20 +4,22 @@ import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { GrFacebookOption } from "react-icons/gr";
+import Logo from "../Logo";
 
 const Footer = () => {
   return (
-    <div className="bg-[#17012C] py-[2rem] text-white">
+    <div className="bg-[#0a2146] py-[3rem] text-white">
       <div className="px-5 sm:px-10 flex flex-col gap-3 sm:flex-row items-center justify-between">
         <div className="flex flex-col gap-3 items-start">
-          <img
+          {/* <img
             fetchPriority="high"
             src={logo}
             alt="logo"
             width="150"
             height="100"
             className="h-[4rem] object-contain"
-          />
+          /> */}
+          <Logo color="white" />
         </div>
         <div className="">
           <div className="flex mt-3 gap-5 justify-start">
