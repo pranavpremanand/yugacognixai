@@ -5,16 +5,24 @@ import process3 from "./assets/working-process-3.png";
 import process4 from "./assets/working-process-4.png";
 
 // web development services icons
-import ecomWebIcon from "./assets/icons/online-shopping.png";
-import socialWebIcon from "./assets/icons/socialmedia.png";
-import landingWebIcon from "./assets/icons/landing-page.png";
-import customWebIcon from "./assets/icons/software-development.png";
+import ecomWebIcon from "./assets/icons/e-commerce.png";
+import socialWebIcon from "./assets/icons/social-media.png";
+import landingWebIcon from "./assets/icons/landing.png";
+import customWebIcon from "./assets/icons/custom.png";
+// import ecomWebIcon from "./assets/icons/online-shopping.png";
+// import socialWebIcon from "./assets/icons/socialmedia.png";
+// import landingWebIcon from "./assets/icons/landing-page.png";
+// import customWebIcon from "./assets/icons/software-development.png";
 
 // app development services icons
-import iosAppIcon from "./assets/icons/ios-development.png";
-import androidAppIcon from "./assets/icons/android-development.png";
-import flutterAppIcon from "./assets/icons/flutter-development.png";
-import hybridAppIcon from "./assets/icons/hybrid-app-development.png";
+import iosAppIcon from "./assets/icons/ios-app.png";
+import androidAppIcon from "./assets/icons/android-app.png";
+import flutterAppIcon from "./assets/icons/flutter-app.png";
+import hybridAppIcon from "./assets/icons/hybrid-app.png";
+// import iosAppIcon from "./assets/icons/ios-development.png";
+// import androidAppIcon from "./assets/icons/android-development.png";
+// import flutterAppIcon from "./assets/icons/flutter-development.png";
+// import hybridAppIcon from "./assets/icons/hybrid-app-development.png";
 
 // all services images
 import service1 from "./assets/services-details/web-development1.webp";
@@ -80,6 +88,11 @@ export const websitePagesLinks = [
     id: 3,
     title: "Our Services",
     link: "/services",
+  },
+  {
+    id: 4,
+    title: "Portfolio",
+    link: "/portfolio",
   },
 ];
 

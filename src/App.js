@@ -5,8 +5,6 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import { lazy, memo, Suspense, useEffect } from "react";
 import NormalizeSlash from "./components/NormalizeSlash";
 import WhatsAppIcon from "./components/WhatsAppIcon";
@@ -15,6 +13,14 @@ import SpinnerContextProvider, {
   LoadingSpinnerContext,
 } from "./components/SpinnerContext";
 import { Toaster } from "react-hot-toast";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({
+  once: true,
+  duration: 500,
+  offset: -70,
+});
 
 const Home = lazy(() => import("./pages/Home"));
 const OurServices = lazy(() => import("./pages/OurServices"));
@@ -44,12 +50,7 @@ const IoT = lazy(() => import("./pages/ServicesPages/IoT"));
 const LandingPage = lazy(() => import("./pages/LandingPage/LandingPage"));
 const Industries = lazy(() => import("./pages/Industries"));
 const Blogs = lazy(() => import("./pages/Blogs"));
-
-Aos.init({
-  once: true,
-  duration: 500,
-  offset: -50,
-});
+const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
               <Route path="/services" element={<OurServices />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/blogs" element={<Blogs />} />
+              <Route path="/portfolio" element={<PortfolioPage />} />
 
               {/* Services Detail Routes with Layout */}
               <Route path="/services" element={<ServicePageLayout />}>

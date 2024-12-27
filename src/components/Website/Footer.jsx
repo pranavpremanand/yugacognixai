@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo/logo.png";
 import { Link } from "react-router-dom";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { GrFacebookOption } from "react-icons/gr";
 import Logo from "../Logo";
@@ -28,14 +28,17 @@ const Footer = () => {
 
           {/* <p className="max-w-[25rem] mt-3">Address: {clientDetails.address}</p> */}
           <div className="flex mt-3 gap-5 items-center">
-            <Link>
+            <Link to="https://www.linkedin.com/company/yugacognixai/">
               <FaLinkedinIn className="text-2xl" />
             </Link>
-            <Link>
+            <Link to="https://www.instagram.com/yugacognixai?igsh=dTBud21kYnlxZXV4">
               <AiFillInstagram className="text-2xl" />
             </Link>
-            <Link>
+            <Link to="https://www.facebook.com/YugaCognixAILLP">
               <GrFacebookOption className="text-2xl" />
+            </Link>
+            <Link to="https://x.com/YugaCognixAI?t=xH2iJ9ix2PR6cTjDkmX9fg&s=09">
+              <FaTwitter className="text-2xl" />
             </Link>
           </div>
         </div>

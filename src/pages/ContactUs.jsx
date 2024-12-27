@@ -23,7 +23,7 @@ const ContactUs = () => {
       />
       <div className="wrapper">
         <div className="grid lg:grid-cols-2 gap-10 py-[5rem]">
-          <div data-aos="fade-right" className="flex flex-col gap-5 pt-[2rem]">
+          <div  className="flex flex-col gap-5 pt-[2rem]">
             <h1 className="heading text-center lg:text-start">
               Innovate. Transform. Succeed.
             </h1>

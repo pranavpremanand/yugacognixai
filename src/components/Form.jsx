@@ -77,7 +77,7 @@ const Form = () => {
         } else {
           toast.success("Email sent successfully");
           reset();
-        //   navigate("/thank-you");
+          //   navigate("/thank-you");
         }
       })
       .catch((error) => {
@@ -86,7 +86,7 @@ const Form = () => {
       .finally(() => setSpinner(false));
   };
   return (
-    <div data-aos="fade-left" className="flex flex-col items-start gap-3 group">
+    <div className="flex flex-col items-start gap-3 group">
       <div className="bg-gradient-to-b from-background to-background rounded-2xl w-full p-7">
         <h2 className="text-2xl font-medium">Get In Touch</h2>
         <form

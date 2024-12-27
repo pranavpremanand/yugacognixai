@@ -1,17 +1,19 @@
 import React from "react";
 import { workingProcess } from "../constants";
+import FadeUp from "./FadeUp";
 
 const WorkingProcess = () => {
   return (
+    <FadeUp>
     <section className="bg-[#f0effc] py-[5rem] relative">
       <div className="wrapper">
-        <h1 data-aos="fade-up" className="heading text-center mb-5 md:mb-10">
+        <h1   className="heading text-center mb-5 md:mb-10">
           Our Working Process
         </h1>
         <div className="grid md:grid-cols-4 gap-5 md:gap-2">
           {workingProcess.map((process) => (
             <div
-              data-aos="fade-up"
+               
               className={`flex items-center flex-col text-center gap-2 ${
                 process.id % 2 === 0 && "md:flex-col-reverse"
               }`}
@@ -42,6 +44,7 @@ const WorkingProcess = () => {
         </div>
       </div>
     </section>
+    </FadeUp>
   );
 };
 

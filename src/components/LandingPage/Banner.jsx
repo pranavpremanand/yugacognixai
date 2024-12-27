@@ -81,13 +81,10 @@ const Banner = ({ page }) => {
           <div className="flex w-full flex-col items-start justify-center relative z-10">
             {isWebDevelopment ? (
               <>
-                <h1 data-aos="fade-right" className="heading text-white">
+                <h1 className="heading text-white">
                   Crafting Innovative Web Solutions for a Digital World
                 </h1>
-                <p
-                  data-aos="fade-right"
-                  className="description text-white mt-2"
-                >
+                <p className="description text-white mt-2">
                   In today's fast-paced market, a powerful website is essential
                   for success. At Yugacognix AI, we craft intuitive,
                   high-performing apps designed to meet your unique business
@@ -97,13 +94,10 @@ const Banner = ({ page }) => {
               </>
             ) : (
               <>
-                <h1 data-aos="fade-right" className="heading text-white">
+                <h1 className="heading text-white">
                   Revolutionize Your Business with Cutting-Edge Mobile Apps
                 </h1>
-                <p
-                  data-aos="fade-right"
-                  className="description text-white mt-2"
-                >
+                <p className="description text-white mt-2">
                   In today's fast-paced market, a powerful mobile app is
                   essential for success. At Yugacognix AI, we craft intuitive,
                   high-performing apps designed to meet your unique business
@@ -113,7 +107,7 @@ const Banner = ({ page }) => {
               </>
             )}
           </div>
-          <div data-aos="fade-left" className="md:flex hidden justify-center">
+          <div className="md:flex hidden justify-center">
             <Link to="contact" id="robot" className="cursor-pointer">
               <img
                 src={robot}

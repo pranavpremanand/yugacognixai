@@ -10,6 +10,7 @@ import img7 from "../assets/client-logos/7.png";
 import img8 from "../assets/client-logos/8.png";
 import img9 from "../assets/client-logos/9.png";
 import img10 from "../assets/client-logos/10.png";
+import FadeUp from "./FadeUp";
 
 const animation = { duration: 10000, easing: (t) => t };
 
@@ -53,36 +54,34 @@ const BrandLogos = () => {
     },
   });
   return (
-    <div className="relative pt-[5rem] pb-[2rem]">
-      <div className="relative z-10">
-        <div data-aos="fade-up" className="wrapper">
-          <h2 className="heading max-w-[60rem] mx-auto text-center capitalize">
-            Join our <span className="text-primary">50+</span> happy clients
-          </h2>
-        </div>
-        <div
-          data-aos="fade-up"
-          ref={sliderRef}
-          className="keen-slider mt-1 py-[2rem]"
-        >
-          {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10].map(
-            (img, index) => (
-              <div
-                key={index}
-                className="keen-slider__slide flex justify-center px-3"
-              >
-                <img
-                  loading="lazy"
-                  src={img}
-                  alt="featured in"
-                  className="object-contain"
-                />
-              </div>
-            )
-          )}
+    <FadeUp>
+      <div className="relative pt-[5rem] pb-[2rem]">
+        <div className="relative z-10">
+          <div className="wrapper">
+            <h2 className="heading max-w-[60rem] mx-auto text-center capitalize">
+              Join our <span className="text-primary">50+</span> happy clients
+            </h2>
+          </div>
+          <div ref={sliderRef} className="keen-slider mt-1 py-[2rem]">
+            {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10].map(
+              (img, index) => (
+                <div
+                  key={index}
+                  className="keen-slider__slide flex justify-center px-3"
+                >
+                  <img
+                    loading="lazy"
+                    src={img}
+                    alt="featured in"
+                    className="object-contain"
+                  />
+                </div>
+              )
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </FadeUp>
   );
 };
 

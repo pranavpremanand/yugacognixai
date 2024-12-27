@@ -1,5 +1,6 @@
 import React from "react";
 import { appPortfolio, webPortfolio } from "../constants";
+import FadeUp from "./FadeUp";
 
 const Portfolio = ({ page }) => {
   let portfolio;
@@ -10,6 +11,7 @@ const Portfolio = ({ page }) => {
     portfolio = [...webPortfolio, ...appPortfolio];
   }
   return (
+    <FadeUp>
     <div id="portfolio" className="  py-[2rem] relative">
       <div className="blue-bg-shape rotate-[-45deg] top-[2rem] right-3 -z-10"></div>
       <div className="blurred-red-circle h-[25rem] w-[25rem] bottom-[-2rem] left-[-2rem] -z-10"></div>
@@ -20,7 +22,7 @@ const Portfolio = ({ page }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
             {portfolio.map((item) => (
               <div
-                data-aos="fade-up"
+                 
                 key={item.id}
                 className="flex justify-self-center aspect-square flex-col gap-3 rounded-md overflow-hidden relative group w-full shadow-2xl"
               >
@@ -43,6 +45,7 @@ const Portfolio = ({ page }) => {
         </div>
       </div>
     </div>
+    </FadeUp>
   );
 };
 

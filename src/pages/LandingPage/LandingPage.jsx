@@ -9,6 +9,8 @@ import CallToAction from "../../components/CallToAction";
 import Form from "../../components/Form";
 import webImg from "../../assets/landingpage-services-imgs/web-development.webp";
 import appImg from "../../assets/landingpage-services-imgs/app-development.webp";
+import bgImg from "../../assets/our-expertise-bg.png";
+import { Link } from "react-router-dom";
 
 const GetInTouch = lazy(() => import("../../components/GetInTouch"));
 const Testimonials = lazy(() => import("../../components/Testimonials"));
@@ -54,7 +56,7 @@ const LandingPage = ({ page }) => {
                     organizations kickstart their AI journey. If you’re seeking
                     a solution for your organization to enhance customer
                     support, boost employee productivity, and make the most of
-                    your organization’s data, look no further.
+                    your organization’s .
                   </p>
                 </div>
               </div>
@@ -68,13 +70,12 @@ const LandingPage = ({ page }) => {
         <div className="blurred-red-circle h-[25rem] w-[25rem] top-[-10rem] left-[-10rem] -z-10"></div>
         <div className="wrapper">
           <h1
-            data-aos="fade-down"
             className="heading text-center mb-5 md:mb-10"
           >
             About Us
           </h1>
           <div className="grid md:grid-cols-2 gap-5 md:gap-10">
-            <p data-aos="fade-right" className="description">
+            <p  className="description">
               At Yugacognix AI, we believe that technology should be the driving
               force behind your business's growth and success. Headquartered in
               the tech capital of India, Bengaluru, we are a team of passionate
@@ -85,7 +86,7 @@ const LandingPage = ({ page }) => {
               fast-evolving marketplace.
             </p>
             <img
-              data-aos="fade-left"
+               
               loading="lazy"
               src={aboutImg}
               alt="about"
@@ -99,31 +100,67 @@ const LandingPage = ({ page }) => {
 
       <section
         id="services"
+        className="my-[3rem] py-[5rem] bg-cover bg-center"
+        style={{ backgroundImage: `url(${bgImg})` }}
+      >
+        <div className="wrapper text-white text-center">
+          <h1 className="heading text-start mb-2">
+            {isWebDevelopment
+              ? "Professional Website Design and Development Company"
+              : "Professional Mobile App Development Company"}
+          </h1>
+          <p className="description text-white/70">
+            {isWebDevelopment
+              ? "Our Full-Stack Web Developers have the programming expertise and industry-specific experience to build, integrate, and customize your website or application to align perfectly with your vision."
+              : "Our Mobile App Developers have the programming expertise and industry-specific experience to build, integrate, and customize your website or application to align perfectly with your vision."}
+          </p>
+          <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {servicesList.map((item) => (
+              <div
+                key={item.id}
+                className="rounded-xl flex flex-col items-center p-5 bg-white hover:bg-[#011225] hover:text-white text-[#22092D] transition-all duration-300"
+              >
+                <img
+                  className="w-[6rem] object-contain"
+                  src={item.icon}
+                  alt=""
+                />
+                <h6 className="mt-5 font-medium text-lg">{item.title}</h6>
+                <p className="description mt-3">{item.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="w-full flex justify-center pt-[2rem] lg:pt-[6rem]">
+            <Link
+              to="/contact-us"
+              className="primary-btn text-white w-fit mx-auto"
+            >
+              Book a Free Consultation
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* <section
+        id="services"
         className="w-screen py-[5rem] min-h-[70vh] flex justify-center relative"
       >
         <div className="blue-bg-shape -z-10 left-[-5%] rotate-45 -translate-y-1/2"></div>
         <div className="blue-bg-shape -z-10 right-[-5%] rotate-45 top-1/2 -translate-y-1/2"></div>
         <div className="wrapper flex flex-col items-center gap-5 z-10">
-          <h1
-            data-aos="fade-up"
-            className="heading text-center max-w-6xl whitespace-pre-line capitalize"
-          >
-            {/* We provide the Best IT solution services */}
+          <h1 className="heading text-center max-w-6xl whitespace-pre-line capitalize">
             {isWebDevelopment
               ? "Your website is your digital storefront;\n Make sure it reflects your brand’s essence."
               : "In the age of smartphones, a mobile app is the key to customer engagement."}
           </h1>
-          <p data-aos="fade-up" className="text-center max-w-6xl description">
+          <p className="text-center max-w-6xl description">
             {isWebDevelopment
               ? "We believe that a great website should not only look good but also function flawlessly, driving conversions and providing measurable results."
               : "Each app we develop is a powerful tool designed to improve productivity, fostering greater engagement and empowering your company to thrive in an increasingly mobile-focused landscape."}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-10 mt-4">
             {servicesList.map((item) => (
-              <div
-                data-aos="fade-up"
-                className="relative group shadow-2xl group py-[4rem] md:py-[8rem] flex items-center overflow-hidden rounded-xl p-5"
-              >
+              <div className="relative group shadow-2xl group py-[4rem] md:py-[8rem] flex items-center overflow-hidden rounded-xl p-5">
                 <img
                   src={item.img}
                   alt={item.title}
@@ -133,14 +170,6 @@ const LandingPage = ({ page }) => {
                   className="absolute group-hover:scale-125 transition-all duration-500 w-full h-full inset-0 z-0 object-cover"
                 />
                 <div className="absolute w-full h-full inset-0 z-0 bg-black/65"></div>
-                {/* <div className="mb-5 w-[12rem] h-[12rem] p-3 rounded-full bg-primary/20 flex items-center justify-center">
-                  <img
-                    loading="lazy"
-                    src={item.icon}
-                    alt="icon"
-                    className="w-[7rem] grayscale object-contain"
-                  />
-                </div> */}
                 <div className="flex flex-col gap-2 items-center relative text-white z-10">
                   <h6 className="font-medium text-center text-3xl">
                     {item.title}
@@ -151,7 +180,7 @@ const LandingPage = ({ page }) => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <HomePageServicesList />
       <CallToAction />
@@ -161,7 +190,7 @@ const LandingPage = ({ page }) => {
       {/* <section className="py-[5rem] relative">
         <div className="blue-bg-shape -z-10 right-[-5%] rotate-[125deg] top-1/2 -translate-y-1/2"></div>
         <div className="wrapper mx-auto grid lg:grid-cols-2 gap-5 md:gap-10">
-          <div data-aos="fade-right" className="flex flex-col gap-5">
+          <div  className="flex flex-col gap-5">
             <h1 className="heading text-center lg:text-start">Why Choose Us</h1>
             <div className="lg:hidden h-full min-h-[25rem] relative">
               <img
@@ -221,7 +250,7 @@ const LandingPage = ({ page }) => {
             </div>
           </div>
           <div
-            data-aos="fade-left"
+             
             className="lg:block hidden h-full min-h-[25rem] relative"
           >
             <img

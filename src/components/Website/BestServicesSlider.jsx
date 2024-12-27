@@ -99,7 +99,7 @@ const BestServicesSlider = () => {
           >
             <FiArrowLeftCircle />
           </button>
-          <div data-aos="fade-up" ref={sliderRef} className="keen-slider">
+          <div   ref={sliderRef} className="keen-slider">
             {cardItems.map(
               ({ description, title, link, icon, id, img }, index) => (
                 <Link to={link} key={id} className="relative pb-[2rem]">

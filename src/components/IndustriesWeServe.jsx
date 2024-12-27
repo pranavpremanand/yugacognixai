@@ -1,15 +1,17 @@
 import React from "react";
 import { industriesCompanyServe } from "../constants";
+import FadeUp from "./FadeUp";
 
 const IndustriesWeServe = () => {
   return (
+    <FadeUp>
     <section className="wrapper py-[4rem]">
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-3 text-center">
-          <h2 data-aos="fade-up" className="heading">
+          <h2   className="heading">
             Transforming Industries with Tailored Solutions
           </h2>
-          <p data-aos="fade-up" className="mt-2 description mb-3">
+          <p   className="mt-2 description mb-3">
             We cater to a wide range of industries, delivering tailored AI and
             tech solutions to meet specific needs:
           </p>
@@ -18,7 +20,7 @@ const IndustriesWeServe = () => {
           {industriesCompanyServe.map((item) => (
             <div
               key={item.id}
-              data-aos="fade-up"
+               
               className="p-5 rounded-lg shadow-lg relative group overflow-hidden min-h-[13rem]"
             >
               <img
@@ -43,6 +45,7 @@ const IndustriesWeServe = () => {
         </div>
       </div>
     </section>
+    </FadeUp>
   );
 };
 

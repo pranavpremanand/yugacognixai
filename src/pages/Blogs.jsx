@@ -13,7 +13,7 @@ export const blogs = [
     title:
       "Web3: The Internet's Next Evolution - Building a User-Owned Digital Future",
     desc: "The internet is undergoing a fundamental transformation. While Web2 brought us social media giants and digital marketplaces, Web3 promises something far more revolutionary: a truly decentralized internet where users don't just interact with applications – they own them.",
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7269313402039136257/",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7254803071212392451/",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const blogs = [
     title:
       "How YugaCognix AI Transforms Investment Decision-Making: A Game-Changer for VCs and Investors",
     desc: "In the high-stakes world of venture capital and investment, making informed decisions has never been more challenging. Investors and venture capitalists face an overwhelming maze of complex financial documents, annual reports, and corporate communications. The traditional approach to investment research is fraught with challenges",
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7254803071212392451/",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7269313402039136257/",
   },
 ];
 const Blogs = () => {
@@ -31,10 +31,7 @@ const Blogs = () => {
       <PageBanner title="Blogs" banner={banner} />
       <div className="bg-secondary/5 relative text-primary_text">
         <div className="py-[5rem] flex flex-col gap-5 items-center wrapper">
-          <h4
-            data-aos="fade-up"
-            className="heading text-center max-w-6xl mx-auto"
-          >
+          <h4 className="heading text-center max-w-6xl mx-auto">
             Exploring the Edge of Digital Transformation
           </h4>
           <div className="mt-[2rem] grid sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-7">
@@ -57,10 +54,7 @@ export default Blogs;
 // blog item
 export const BlogItem = ({ blog }) => {
   return (
-    <div
-      data-aos="fade-up"
-      className="bg-white rounded-xl p-5 relative z-10 group border"
-    >
+    <div className="bg-white rounded-xl p-5 relative z-10 group border">
       <Link to={blog.link} target="_blank">
         <img
           src={blog.image}

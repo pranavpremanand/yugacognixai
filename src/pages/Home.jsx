@@ -2,10 +2,10 @@ import React, { lazy, memo } from "react";
 import Header from "../components/Website/Header";
 import Footer from "../components/Website/Footer";
 import CallToAction from "../components/CallToAction";
-import BrandLogos from "../components/BrandLogos";
-import Portfolio from "../components/Portfolio";
 import Testimonials from "../components/Testimonials";
 
+const Portfolio = lazy(() => import("../components/Portfolio"));
+const BrandLogos = lazy(() => import("../components/BrandLogos"));
 const Banner = lazy(() => import("../components/Website/Banner"));
 const TrustWorthySection = lazy(() =>
   import("../components/TrustWorthySection")
@@ -27,13 +27,12 @@ const Home = () => {
         <div className="blurred-red-circle h-[25rem] w-[25rem] top-[-10rem] left-[-10rem] -z-10"></div>
         <div className="wrapper">
           <h1
-            data-aos="fade-down"
             className="heading text-center mb-5 md:mb-10"
           >
             About Us
           </h1>
           <div className="grid md:grid-cols-2 gap-5 md:gap-10">
-            <p data-aos="fade-right" className="description">
+            <p  className="description">
               At Yugacognix AI, we believe that technology should be the driving
               force behind your business's growth and success. Headquartered in
               the tech capital of India, Bengaluru, we are a team of passionate
@@ -44,7 +43,7 @@ const Home = () => {
               fast-evolving marketplace.
             </p>
             <img
-              data-aos="fade-left"
+               
               loading="lazy"
               src={aboutImg}
               alt="about"
@@ -55,13 +54,13 @@ const Home = () => {
       </section> */}
 
       <HomePageServicesList />
+      <CallToAction />
       <TrustWorthySection />
-      {/* <CallToAction /> */}
 
       {/* <section className="py-[5rem] relative">
         <div className="blue-bg-shape -z-10 right-[-5%] rotate-[125deg] top-1/2 -translate-y-1/2"></div>
         <div className="wrapper mx-auto grid lg:grid-cols-2 gap-5 md:gap-10">
-          <div data-aos="fade-right" className="flex flex-col gap-5">
+          <div  className="flex flex-col gap-5">
             <h1 className="heading text-center lg:text-start">Why Choose Us</h1>
             <div className="lg:hidden h-full min-h-[25rem] relative">
               <img
@@ -123,7 +122,7 @@ const Home = () => {
             </div>
           </div>
           <div
-            data-aos="fade-left"
+             
             className="lg:block hidden h-full min-h-[25rem] relative"
           >
             <img
@@ -143,6 +142,7 @@ const Home = () => {
       </section> */}
       <IndustriesWeServe />
       <Portfolio />
+      <CallToAction />
       {/* <BestServicesSlider /> */}
       <Testimonials />
       <GetInTouch />

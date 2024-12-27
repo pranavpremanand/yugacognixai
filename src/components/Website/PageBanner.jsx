@@ -18,11 +18,11 @@ const PageBanner = ({ title, banner, position, description }) => {
       <div
         className={`${alignment} wrapper relative z-10 w-full flex flex-col gap-3 px-3 sm:px-8`}
       >
-        <h1 data-aos="fade-up" className="heading-1 text-start max-w-3xl">
+        <h1   className="heading-1 text-start max-w-3xl">
           {title}
         </h1>
         {description && (
-          <p data-aos="fade-up" className="description max-w-3xl">
+          <p   className="description max-w-3xl">
             {description}
           </p>
         )}

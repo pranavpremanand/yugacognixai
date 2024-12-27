@@ -23,8 +23,7 @@ const Header = () => {
             <Logo />
           </ScrollLink>
           <div
-            data-aos="fade-down"
-            className="hidden lg:flex items-center gap-5"
+            className="hidden lg:flex items-center gap-10"
           >
             {/* {landingPageHeaderLinks.map((link) => (
               <ScrollLink
@@ -40,17 +39,9 @@ const Header = () => {
                 {link.title}
               </ScrollLink>
             ))} */}
-            <ScrollLink
-              to="banner"
-              spy={true}
-              smooth={true}
-              duration={500}
-              offset={-20}
-              className="text-md cursor-pointer"
-              activeClass="active-link"
-            >
+            <Link to="/" className="text-md cursor-pointer">
               Home
-            </ScrollLink>
+            </Link>
             <Link to="/about-us" className="text-md cursor-pointer">
               About Us
             </Link>

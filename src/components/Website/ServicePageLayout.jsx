@@ -18,7 +18,7 @@ const ServicePageLayout = () => {
         <div className="pt-[5rem] pb-[2rem] grid md:grid-cols-[30%_65%] gap-10">
           <div className="w-full flex flex-col gap-10">
             <div
-              data-aos="fade-up"
+               
               className="bg-[#9cbde5] p-4 lg:p-6 rounded-lg"
             >
               <h4 className="text-2xl font-medium">All Services</h4>
@@ -39,7 +39,7 @@ const ServicePageLayout = () => {
               </div>
             </div>
             <div
-              data-aos="fade-up"
+               
               className="text-center bg-gradient-to-b hidden md:flex flex-col items-center gap-3 text-white from-[#0082FB] to-[#618cefb1] px-4 lg:px-6 py-10 rounded-lg"
             >
               <div className="w-[3.5rem] h-[3.5rem] bg-background text-primary rounded-full p-3 flex justify-center items-center">
@@ -51,7 +51,7 @@ const ServicePageLayout = () => {
               </Link>
             </div>
             {/* <div
-              data-aos="fade-up"
+               
               className="text-center bg-[#ECF8FF] hidden md:flex flex-col items-start gap-3 px-4 lg:px-6 py-10 rounded-lg"
             >
               <h4 className="text-xl font-semibold">Working Days</h4>
@@ -78,7 +78,7 @@ const ServicePageLayout = () => {
             <Outlet />
           </div>
           <div
-            data-aos="fade-up"
+             
             className="text-center bg-[#ECF8FF] flex md:hidden flex-col items-start gap-3 px-4 lg:px-6 py-10 rounded-lg"
           >
             <h4 className="text-xl font-semibold">Working Days</h4>
@@ -100,7 +100,7 @@ const ServicePageLayout = () => {
             </div>
           </div>
           <div
-            data-aos="fade-up"
+             
             className="text-center bg-gradient-to-b flex md:hidden flex-col items-center gap-3 text-white from-[#0082FB] to-[#618cefb1] px-4 lg:px-6 py-10 rounded-lg"
           >
             <div className="w-[3.5rem] h-[3.5rem] bg-background text-primary rounded-full p-3 flex justify-center items-center">

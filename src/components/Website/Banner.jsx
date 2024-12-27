@@ -78,7 +78,7 @@ const Banner = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
       <div className="absolute w-full h-fit left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 wrapper flex flex-col-reverse md:grid grid-cols-[60%_auto] items-center md:gap-10">
         <div
-          data-aos="fade-right"
+          
           className="flex w-full flex-col items-start justify-center relative z-10"
         >
           <h1 className="heading-1 text-white capitalize">
@@ -89,14 +89,14 @@ const Banner = () => {
             needs of startups and established enterprises, ensuring a
             competitive edge in the digital era.
           </p>
-          <Link to="/about-us" className="primary-btn mt-5">
+          <Link to="/contact-us" className="primary-btn mt-5">
             Get Started Now
           </Link>
         </div>
         {/* <div className="lg:pt-0 pt-[10rem]">
         <Form />
         </div> */}
-        <div data-aos="fade-left" className="md:flex hidden justify-center">
+        <div   className="md:flex hidden justify-center">
           <Link to="/contact-us" id="robot">
             <img
               src={robot}
