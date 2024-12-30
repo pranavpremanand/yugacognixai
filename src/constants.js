@@ -130,7 +130,6 @@ export const webDevelopmentServices = [
     id: 1,
     title: "E-commerence Websites",
     icon: ecomWebIcon,
-    img: require("./assets/landingpage-services-imgs/ecommerce.webp"),
     description:
       "Empowering your online business with tailored ecommerce solutions. Our platforms boost customer engagement, streamline operations, and drive revenue growth. ",
   },
@@ -138,7 +137,6 @@ export const webDevelopmentServices = [
     id: 2,
     title: "Social Media Websites",
     icon: socialWebIcon,
-    img: require("./assets/landingpage-services-imgs/socialmedia.webp"),
     description:
       "Get custom social media websites that captivate and engage your audience, driving growth and brand loyalty effortlessly.",
   },
@@ -146,17 +144,43 @@ export const webDevelopmentServices = [
     id: 3,
     title: "Landing Websites",
     icon: landingWebIcon,
-    img: require("./assets/landingpage-services-imgs/landing.webp"),
     description:
       " Creating high-converting landing pages that capture attention and drive action. Tailored designs that showcase your brand’s message and maximize conversions.",
   },
   {
     id: 4,
-    title: "Custom Websites",
+    title: "Progressive Web App Development",
     icon: customWebIcon,
-    img: require("./assets/landingpage-services-imgs/customweb.webp"),
     description:
-      "Delivering tailor-made websites designed to meet your unique business needs. Our solutions blend creativity and functionality for an exceptional online experience.",
+      "Take your web presence to the next level with Progressive Web Apps. At YugaCognix AI, we build PWAs that combine modern web capabilities with an app-like experience, designed to captivate users and keep them engaged.",
+  },
+  {
+    id: 5,
+    title: "Web App Integration Services",
+    icon: landingWebIcon,
+    description:
+      "We always stay on top of the latest developments in deployment, customization, and integration to design the perfect, seamless approach to how you utilize your software.",
+  },
+  {
+    id: 6,
+    title: "Enterprise Web Design and Development",
+    icon: customWebIcon,
+    description:
+      "We use custom APIs and our vast knowledge of web services to build Enterprise Web Applications for digital marketing, CRM, inventory control, expedited workflows, and so much more.",
+  },
+  {
+    id: 7,
+    title: "Web Portal Development",
+    icon: socialWebIcon,
+    description:
+      "Our Web Portal Developers have both engineering expertise and a keen understanding of the business sector to create reliable and robust web solutions that help companies manage their workflows.",
+  },
+  {
+    id: 8,
+    title: "Animation & Graphics Web Design",
+    icon: ecomWebIcon,
+    description:
+      "Our award-winning animators and graphic designers create beautiful logos, branding materials, illustrations, infographics, motion graphics, and more to fulfill your branding vision.",
   },
 ];
 
@@ -166,7 +190,6 @@ export const appDevelopmentServices = [
     id: 1,
     title: "iOS App Development",
     icon: iosAppIcon,
-    img: require("./assets/landingpage-services-imgs/ios.webp"),
     description:
       "Our skilled developers work with both Swift and Objective-C to build robust and efficient apps. We optimize your app for performance, speed, and responsiveness.",
   },
@@ -174,7 +197,6 @@ export const appDevelopmentServices = [
     id: 2,
     title: "Android App Development",
     icon: androidAppIcon,
-    img: require("./assets/landingpage-services-imgs/android.webp"),
     description:
       "We design and develop tailor-made Android apps that align with your vision and business goals.Proficient in both Java and Kotlin, we build robust and efficient apps.",
   },
@@ -182,17 +204,29 @@ export const appDevelopmentServices = [
     id: 3,
     title: "Flutter App Development",
     icon: flutterAppIcon,
-    img: require("./assets/landingpage-services-imgs/flutter.webp"),
     description:
       "Flutter allows you to build apps for both iOS and Android using a single codebase. While Flutter's default web app architecture presents challenges, we can overcome them with smart strategies. ",
   },
   {
     id: 4,
-    title: "Hybrid App Development",
+    title: "Cross-Platform App Development",
     icon: hybridAppIcon,
-    img: require("./assets/landingpage-services-imgs/hybrid.webp"),
     description:
-      "We build feature-rich hybrid apps tailored to your business needs. We create mobile-friendly apps that work seamlessly across iOS and Android devices.",
+      "YugaCognixAI is empowering startups and established businesses worldwide with cutting-edge cross-platform app development. Reach a wider audience by launching your app across all major platforms with our expert solutions.",
+  },
+  {
+    id: 5,
+    title: "AI Powered App Development",
+    icon: iosAppIcon,
+    description:
+      "Our AI experts build intelligent applications with machine learning and data analysis to optimize business processes. From automation to predictive analytics, we deliver solutions that boost efficiency, decision-making, and customer experiences.",
+  },
+  {
+    id: 6,
+    title: "Game App Development",
+    icon: androidAppIcon,
+    description:
+      "Our game app development team merges creativity with technical excellence to craft engaging, interactive games. With over 51+ successful projects completed, we bring your gaming vision to life with flawless execution and delivery.",
   },
 ];
 
@@ -498,5 +532,109 @@ export const appPortfolio = [
     id: 5,
     img: require("./assets/app_projects/5.webp"),
     title: "House of Deliverance",
+  },
+];
+
+// portfolio images (shared by the client)
+export const sharedPortfolio = [
+  {
+    id: 1,
+    img: require("./assets/other portfolio/Autopilot.jpg"),
+    title: "Autopilot",
+  },
+  {
+    id: 2,
+    img: require("./assets/other portfolio/Autosnap.jpg"),
+    title: "Autosnap",
+  },
+  {
+    id: 3,
+    img: require("./assets/other portfolio/Bluejestic.jpg"),
+    title: "Bluejestic",
+  },
+  {
+    id: 4,
+    img: require("./assets/other portfolio/Coldcreek.jpg"),
+    title: "Coldcreek",
+  },
+  {
+    id: 5,
+    img: require("./assets/other portfolio/Crypto_Padie.jpg"),
+    title: "Crypto Padie",
+  },
+  {
+    id: 6,
+    img: require("./assets/other portfolio/Disha.jpg"),
+    title: "Disha",
+  },
+  {
+    id: 7,
+    img: require("./assets/other portfolio/Dronedekho.jpg"),
+    title: "Dronedekho",
+  },
+  {
+    id: 8,
+    img: require("./assets/other portfolio/Dubai_Travel_Guide.jpg"),
+    title: "Dubai Travel Guide",
+  },
+  {
+    id: 9,
+    img: require("./assets/other portfolio/FlylabSolution.jpg"),
+    title: "FlylabSolution",
+  },
+  {
+    id: 10,
+    img: require("./assets/other portfolio/ICCBrossard.jpg"),
+    title: "ICCBrossard",
+  },
+  {
+    id: 11,
+    img: require("./assets/other portfolio/MNexgen.jpg"),
+    title: "MNexgen",
+  },
+  {
+    id: 12,
+    img: require("./assets/other portfolio/Magic_AI_Avatars.jpg"),
+    title: "Magic AI Avatars",
+  },
+  {
+    id: 13,
+    img: require("./assets/other portfolio/PlayStation App.jpg"),
+    title: "PlayStation App",
+  },
+  {
+    id: 14,
+    img: require("./assets/other portfolio/Rentop Bike & Car Rentals.jpg"),
+    title: "Rentop Bike & Car Rentals",
+  },
+  {
+    id: 15,
+    img: require("./assets/other portfolio/TGFX_Trade_Lab.jpg"),
+    title: "TGFX Trade Lab",
+  },
+  {
+    id: 16,
+    img: require("./assets/other portfolio/Think_realty.jpg"),
+    title: "Think Reality",
+  },
+  {
+    id: 17,
+    img: require("./assets/other portfolio/Tweetfox.jpg"),
+    title: "Tweetfox",
+  },
+  {
+    id: 18,
+    img: require("./assets/other portfolio/essina_Catering_event.jpg"),
+    title: "Essina Catering event",
+  },
+  {
+    id: 19,
+    img: require("./assets/other portfolio/nanfolo.jpg"),
+    title: "Nanfolo",
+  },
+  {
+    id: 20,
+    img: require("./assets/other portfolio/padiepal.jpg"),
+    title: "Padiepal",
   },
 ];

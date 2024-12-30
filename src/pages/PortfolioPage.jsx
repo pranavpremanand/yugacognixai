@@ -5,8 +5,9 @@ import CallToAction from "../components/CallToAction";
 import Footer from "../components/Website/Footer";
 import banner from "../assets/portfolio-banner.webp";
 import FadeUp from "../components/FadeUp";
-import { appPortfolio, webPortfolio } from "../constants";
+import { appPortfolio, sharedPortfolio, webPortfolio } from "../constants";
 import GetInTouch from "../components/GetInTouch";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 const PortfolioPage = () => {
   return (
@@ -20,6 +21,7 @@ const PortfolioPage = () => {
           <Works />
         </div>
       </div>
+      <WhyChooseUs />
       <div className="mb-[4rem]">
         <GetInTouch />
       </div>
@@ -39,7 +41,7 @@ const Works = () => {
         <div className="wrapper">
           <div className="flex flex-col items-center gap-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-              {appPortfolio.concat(webPortfolio).map((item) => (
+              {appPortfolio.concat(webPortfolio,sharedPortfolio).map((item) => (
                 <div
                   key={item.id}
                   className="flex justify-self-center aspect-square flex-col gap-3 rounded-md overflow-hidden relative group w-full shadow-2xl"

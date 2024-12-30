@@ -6,6 +6,7 @@ import GetInTouch from "../components/GetInTouch";
 import img1 from "../assets/solutions/1.png";
 import img2 from "../assets/solutions/2.png";
 import img3 from "../assets/solutions/3.png";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 const HomePageServicesList = lazy(() =>
   import("../components/HomePageServicesList")
@@ -31,8 +32,9 @@ const OurServices = () => {
           </p>
           <div className="space-y-6">
             <HomePageServicesList />
+            <WhyChooseUs />
             <div className="space-y-6">
-              <h1 className="heading text-center">Solutions</h1>
+              <h1 className="heading text-center">Solution 1</h1>
               <hr />
 
               {/* 1 */}
@@ -131,12 +133,18 @@ const OurServices = () => {
                   </ul>
                 </div>
               </div>
-              <img src={img1} alt="Solution" className="w-full aspect-video object-contain" />
+              <img
+                src={img1}
+                alt="Solution"
+                className="w-full aspect-video object-contain"
+              />
               <hr />
 
               {/* 2 */}
-              <div className="py-6">
-                <div className="text-center">
+              <div className="py-6 space-y-6">
+                <h1 className="heading text-center">Solution 2</h1>
+                <hr />
+                <div className="py-6 text-center">
                   <h3 className="text-xl font-semibold md:text-3xl md:font-medium mb-4 leading-tight">
                     Streamline Contract Management System with NegotiateGPT by
                     YugaCognix AI
@@ -248,12 +256,18 @@ const OurServices = () => {
                   </ul>
                 </div>
               </div>
-              <img src={img2} alt="Solution" className="w-full aspect-video object-contain" />
+              <img
+                src={img2}
+                alt="Solution"
+                className="w-full aspect-video object-contain"
+              />
               <hr />
 
               {/* 3 */}
-              <div className="py-6">
-                <div className="text-center">
+              <div className="py-6 space-y-6">
+                <h1 className="heading text-center">Solution 3</h1>
+                <hr />
+                <div className="py-6 text-center">
                   <h3 className="text-xl font-semibold md:text-3xl md:font-medium mb-4 leading-tight">
                     Revolutionize Investment Research with Key Insight GPT by
                     YugaCognix AI
@@ -360,7 +374,11 @@ const OurServices = () => {
                     </li>
                   </ul>
                 </div>
-                <img src={img3} alt="Solution" className="w-full aspect-video object-contain" />
+                <img
+                  src={img3}
+                  alt="Solution"
+                  className="w-full aspect-video object-contain"
+                />
               </div>
             </div>
           </div>

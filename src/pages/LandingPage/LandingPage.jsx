@@ -11,6 +11,7 @@ import webImg from "../../assets/landingpage-services-imgs/web-development.webp"
 import appImg from "../../assets/landingpage-services-imgs/app-development.webp";
 import bgImg from "../../assets/our-expertise-bg.png";
 import { Link } from "react-router-dom";
+import WhyChooseUs from "../../components/WhyChooseUs";
 
 const GetInTouch = lazy(() => import("../../components/GetInTouch"));
 const Testimonials = lazy(() => import("../../components/Testimonials"));
@@ -185,6 +186,7 @@ const LandingPage = ({ page }) => {
       <HomePageServicesList />
       <CallToAction />
       <IndustriesWeServe />
+      <WhyChooseUs />
       <Portfolio />
       {/* <WorkingProcess /> */}
       {/* <section className="py-[5rem] relative">

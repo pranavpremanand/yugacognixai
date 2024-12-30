@@ -6,6 +6,7 @@ import IndustriesWeServe from "../components/IndustriesWeServe";
 import GetInTouch from "../components/GetInTouch";
 import banner from "../assets/industries-banner.webp";
 import BrandLogos from "../components/BrandLogos";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 const Industries = () => {
   return (
@@ -19,6 +20,7 @@ const Industries = () => {
       <div className="mt-[3rem]">
         <IndustriesWeServe />
       </div>
+      <WhyChooseUs />
       <BrandLogos />
       <GetInTouch />
       <Footer />

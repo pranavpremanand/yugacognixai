@@ -3,6 +3,7 @@ import Header from "../components/Website/Header";
 import Footer from "../components/Website/Footer";
 import CallToAction from "../components/CallToAction";
 import Testimonials from "../components/Testimonials";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 const Portfolio = lazy(() => import("../components/Portfolio"));
 const BrandLogos = lazy(() => import("../components/BrandLogos"));
@@ -141,6 +142,7 @@ const Home = () => {
         </div>
       </section> */}
       <IndustriesWeServe />
+      <WhyChooseUs />
       <Portfolio />
       <CallToAction />
       {/* <BestServicesSlider /> */}
