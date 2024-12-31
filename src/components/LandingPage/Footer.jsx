@@ -39,9 +39,12 @@ const Footer = () => {
           </div>
         </div>
         <hr />
-        <p className="text-center">
-          @YugaCognix AI {new Date().getFullYear()}. All rights reserved.
-        </p>
+        <div className="flex text-center md:text-start md:flex-row flex-col-reverse justify-between gap-5">
+          <p className="text-center">
+            @YugaCognix AI {new Date().getFullYear()}. All rights reserved.
+          </p>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+        </div>
       </div>
     </div>
   );

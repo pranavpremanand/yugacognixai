@@ -62,6 +62,9 @@ const Footer = () => {
               <Link to="/contact-us" className="cursor-pointer">
                 Contact Us
               </Link>
+              <Link to="/privacy-policy" className="cursor-pointer">
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>

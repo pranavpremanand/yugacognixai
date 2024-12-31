@@ -51,6 +51,7 @@ const LandingPage = lazy(() => import("./pages/LandingPage/LandingPage"));
 const Industries = lazy(() => import("./pages/Industries"));
 const Blogs = lazy(() => import("./pages/Blogs"));
 const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
               <Route path="/industries" element={<Industries />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
               {/* Services Detail Routes with Layout */}
               <Route path="/services" element={<ServicePageLayout />}>
