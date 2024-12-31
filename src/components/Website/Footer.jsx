@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../assets/logo/logo.png";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
