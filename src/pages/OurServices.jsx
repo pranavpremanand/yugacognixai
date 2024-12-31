@@ -34,7 +34,7 @@ const OurServices = () => {
             <HomePageServicesList />
             <WhyChooseUs />
             <div className="space-y-6">
-              <h1 className="heading text-center">Solution 1</h1>
+              <h1 className="heading text-center">Finsight-GPT</h1>
               <hr />
 
               {/* 1 */}
@@ -142,7 +142,7 @@ const OurServices = () => {
 
               {/* 2 */}
               <div className="py-6 space-y-6">
-                <h1 className="heading text-center">Solution 2</h1>
+                <h1 className="heading text-center">Negotiate-GPT </h1>
                 <hr />
                 <div className="py-6 text-center">
                   <h3 className="text-xl font-semibold md:text-3xl md:font-medium mb-4 leading-tight">
@@ -265,7 +265,7 @@ const OurServices = () => {
 
               {/* 3 */}
               <div className="py-6 space-y-6">
-                <h1 className="heading text-center">Solution 3</h1>
+                <h1 className="heading text-center">Insight-GPT</h1>
                 <hr />
                 <div className="py-6 text-center">
                   <h3 className="text-xl font-semibold md:text-3xl md:font-medium mb-4 leading-tight">

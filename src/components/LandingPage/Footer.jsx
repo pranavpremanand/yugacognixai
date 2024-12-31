@@ -8,10 +8,11 @@ import Logo from "../Logo";
 
 const Footer = () => {
   return (
-    <div className="bg-[#0a2146] py-[3rem] text-white">
-      <div className="px-5 sm:px-10 flex flex-col gap-3 sm:flex-row items-center justify-between">
-        <div className="flex flex-col gap-3 items-start">
-          {/* <img
+    <div className="bg-[#0a2146] pt-[3rem] pb-[2rem] text-white">
+      <div className="wrapper space-y-7">
+        <div className="flex flex-col gap-3 sm:flex-row items-center justify-between">
+          <div className="flex flex-col gap-3 items-start">
+            {/* <img
             fetchPriority="high"
             src={logo}
             alt="logo"
@@ -19,24 +20,29 @@ const Footer = () => {
             height="100"
             className="h-[4rem] object-contain"
           /> */}
-          <Logo color="white" />
-        </div>
-        <div className="">
-          <div className="flex mt-3 gap-5 justify-start">
-            <Link to="https://www.linkedin.com/company/yugacognixai/">
-              <FaLinkedinIn className="text-2xl" />
-            </Link>
-            <Link to="https://www.instagram.com/yugacognixai?igsh=dTBud21kYnlxZXV4">
-              <AiFillInstagram className="text-2xl" />
-            </Link>
-            <Link to="https://www.facebook.com/YugaCognixAILLP">
-              <GrFacebookOption className="text-2xl" />
-            </Link>
-            <Link to="https://x.com/YugaCognixAI?t=xH2iJ9ix2PR6cTjDkmX9fg&s=09">
-              <FaTwitter className="text-2xl" />
-            </Link>
+            <Logo color="white" />
+          </div>
+          <div className="">
+            <div className="flex mt-3 gap-5 justify-start">
+              <Link to="https://www.linkedin.com/company/yugacognixai/">
+                <FaLinkedinIn className="text-2xl" />
+              </Link>
+              <Link to="https://www.instagram.com/yugacognixai?igsh=dTBud21kYnlxZXV4">
+                <AiFillInstagram className="text-2xl" />
+              </Link>
+              <Link to="https://www.facebook.com/YugaCognixAILLP">
+                <GrFacebookOption className="text-2xl" />
+              </Link>
+              <Link to="https://x.com/YugaCognixAI?t=xH2iJ9ix2PR6cTjDkmX9fg&s=09">
+                <FaTwitter className="text-2xl" />
+              </Link>
+            </div>
           </div>
         </div>
+        <hr />
+        <p className="text-center">
+          @YugaCognix AI {new Date().getFullYear()}. All rights reserved.
+        </p>
       </div>
     </div>
   );

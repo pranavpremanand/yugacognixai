@@ -22,9 +22,7 @@ const Header = () => {
           >
             <Logo />
           </ScrollLink>
-          <div
-            className="hidden lg:flex items-center gap-10"
-          >
+          <div className="hidden lg:flex items-center gap-10">
             {/* {landingPageHeaderLinks.map((link) => (
               <ScrollLink
                 key={link.id}
@@ -100,12 +98,7 @@ const Header = () => {
         className="z-10 p-2"
       >
         <div className="mb-6 flex items-center justify-between pr-[.7rem] py-[.4rem]">
-          <img
-            loading="lazy"
-            src={logo}
-            alt="logo"
-            className="h-[3rem] object-contain"
-          />
+          <Logo />
           <button
             title="Close"
             onClick={() => setIsOpen(false)}

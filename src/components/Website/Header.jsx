@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/logo/logo.png";
 import { websitePagesLinks } from "../../constants";
 import Drawer from "react-modern-drawer";
 import { Divide as Hamburger } from "hamburger-react";
@@ -66,12 +65,7 @@ const Header = () => {
         className="z-10 p-2"
       >
         <div className="mb-6 flex items-center justify-between pr-[.7rem] py-[.4rem]">
-          <img
-            loading="lazy"
-            src={logo}
-            alt="logo"
-            className="h-[3rem] object-contain"
-          />
+          <Logo />
           <button
             title="Close"
             onClick={() => setIsOpen(false)}
