@@ -42,7 +42,8 @@ import client4 from "./assets/client-4.png";
 
 // client details
 export const clientDetails = {
-  phone: "9765087666",
+  phone: "+919765087666",
+  phone2: "+919765728555",
   email: "info@yugacognixai.com",
   address:
     "5th A Cross Rd, R.K Colony, Manjunath Colony, 2nd Phase, J. P. Nagar, Bengaluru, Karnataka",
