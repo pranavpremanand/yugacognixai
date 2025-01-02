@@ -41,23 +41,20 @@ const LandingPage = ({ page }) => {
       <div className="bg-primary/5 py-[4rem] mb-[3rem]">
         <div className="wrapper">
           <div className="grid md:grid-cols-2 items-center gap-5">
-            <div className="aspect-video relative h-full w-full rounded-xl overflow-hidden">
+            <div className="md:aspect-video relative h-full w-full rounded-xl overflow-hidden">
               <img
                 src={isWebDevelopment ? webImg : appImg}
                 className="w-full h-full object-cover"
                 alt=""
               />
               <div className="absolute left-0 top-0 w-full p-3 h-full flex items-center justify-center bg-black/60">
-                <div className="text-white space-y-3 text-center">
+                <div className="p-5 text-white space-y-3 text-center">
                   <p className="font-sans text-3xl sm:text-4xl font-bold">
                     Book Your Free Consultation
                   </p>
                   <p className="description">
                     YugaCognix AI is an AI company based in Bengaluru. We help
-                    organizations kickstart their AI journey. If you’re seeking
-                    a solution for your organization to enhance customer
-                    support, boost employee productivity, and make the most of
-                    your organization’s .
+                    organizations kickstart their AI journey.
                   </p>
                 </div>
               </div>
