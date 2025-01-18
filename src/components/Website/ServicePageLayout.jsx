@@ -65,7 +65,7 @@ const ServicePageLayout = () => {
                   Sunday: Closed
                 </Link>
                 <Link
-                  to="/contact-us"
+                  to="/contact"
                   className="tertiary-btn flex justify-center items-center gap-2 rounded-md"
                 >
                   Appointment Now{" "}
@@ -92,7 +92,7 @@ const ServicePageLayout = () => {
                 Sunday: Closed
               </Link>
               <Link
-                to="/contact-us"
+                to="/contact"
                 className="tertiary-btn flex justify-center items-center gap-2 rounded-md"
               >
                 Appointment Now <IoIosArrowRoundForward className="text-3xl" />

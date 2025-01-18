@@ -194,7 +194,7 @@ const AboutUs = () => {
                 There are many reasons to get down and start to get depressed
                 about your situation.
               </p>
-              <Link to="/contact-us" className="primary-btn w-fit mt-5">
+              <Link to="/contact" className="primary-btn w-fit mt-5">
                 Get Started
               </Link>
             </div>

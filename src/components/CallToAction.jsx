@@ -17,7 +17,7 @@ const CallToAction = () => {
           organization.
         </p>
         <Link
-          to="/contact-us"
+          to="/contact"
           className="tertiary-btn capitalize rounded-full w-fit mt-6"
         >
           Talk to our expert

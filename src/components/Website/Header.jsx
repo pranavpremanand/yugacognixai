@@ -39,7 +39,7 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-            <Link to="/contact-us" className="primary-btn">
+            <Link to="/contact" className="primary-btn">
               Contact Us
             </Link>
           </div>
@@ -96,7 +96,7 @@ const Header = () => {
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
-            to="/contact-us"
+            to="/contact"
             className="text-2xl font-medium duration-300 link"
           >
             Contact Us

@@ -89,7 +89,7 @@ const Banner = () => {
             needs of startups and established enterprises, ensuring a
             competitive edge in the digital era.
           </p>
-          <Link to="/contact-us" className="primary-btn mt-5">
+          <Link to="/contact" className="primary-btn mt-5">
             Get Started Now
           </Link>
         </div>
@@ -97,7 +97,7 @@ const Banner = () => {
         <Form />
         </div> */}
         <div   className="md:flex hidden justify-center">
-          <Link to="/contact-us" id="robot">
+          <Link to="/contact" id="robot">
             <img
               src={robot}
               className="w-[15rem] object-contain relative z-0"
