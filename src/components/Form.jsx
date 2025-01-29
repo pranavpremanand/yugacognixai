@@ -1,16 +1,19 @@
 // import { allServices } from "../constants";
 // import { BiCaretRight } from "react-icons/bi";
 
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import { SpinnerContext } from "./SpinnerContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { clientDetails } from "../constants";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Form = () => {
   const { setSpinner } = useContext(SpinnerContext);
   const navigate = useNavigate();
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+  const recaptchaRef = useRef(null);
   const {
     register,
     handleSubmit,
@@ -29,6 +32,11 @@ const Form = () => {
 
   // handle form submit click
   const handleFormSubmit = async (values) => {
+    if (!isCaptchaVerified) {
+      toast.error("Please complete the reCAPTCHA verification");
+      return;
+    }
+
     setSpinner(true);
 
     var emailBody = "Name: " + values.name + "\n\n";
@@ -155,7 +163,7 @@ const Form = () => {
               type="text"
               rows="4"
               placeholder="Message"
-              className="w-full outline-none p-3 rounded-lg  "
+              className="w-full outline-none p-3 rounded-lg border"
               required
               autoComplete="off"
               {...register("message", {
@@ -170,6 +178,15 @@ const Form = () => {
               })}
             />
             <p className="text-blue-900">{errors.message?.message}</p>
+          </div>
+          <div className="mt-4">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey="6Lf7g8YqAAAAAB1WsfCwhyYVM2vqV1BO0bp4HMdi"
+              onChange={(value) => setIsCaptchaVerified(!!value)}
+              theme="light"
+              className="transform scale-90 origin-left"
+            />
           </div>
           <button
             disabled={isSubmitting}

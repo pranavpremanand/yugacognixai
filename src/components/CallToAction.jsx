@@ -18,7 +18,7 @@ const CallToAction = () => {
         </p>
         <Link
           to="/contact"
-          className="tertiary-btn capitalize rounded-full w-fit mt-6"
+          className="secondary-btn capitalize rounded-full w-fit mt-6"
         >
           Talk to our expert
         </Link>

@@ -12,6 +12,7 @@ import appImg from "../../assets/landingpage-services-imgs/app-development.webp"
 import bgImg from "../../assets/our-expertise-bg.png";
 import { Link } from "react-router-dom";
 import WhyChooseUs from "../../components/WhyChooseUs";
+import PopupForm from "../../components/PopupForm";
 
 const GetInTouch = lazy(() => import("../../components/GetInTouch"));
 const Testimonials = lazy(() => import("../../components/Testimonials"));
@@ -35,6 +36,7 @@ const LandingPage = ({ page }) => {
     : appDevelopmentServices;
   return (
     <>
+      <PopupForm storageKey={`popup-${isWebDevelopment ? "web" : "app"}-form`} />
       <Header />
       <Banner page={page} />
       <BrandLogos />

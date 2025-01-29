@@ -18,30 +18,30 @@ const Header = () => {
           </Link>
           <div className="hidden lg:flex items-center gap-10">
             {websitePagesLinks.map((link) => (
-              <Link
+              <a
                 key={link.id}
-                to={link.link}
+                href={link.link}
                 className={`text-md cursor-pointer ${
                   pathname === link.link && "active-link"
                 }`}
               >
                 {link.title}
-              </Link>
+              </a>
             ))}
             <div className="relative group text-md">
               <button className="text-md cursor-pointer">Company</button>
               <div className="absolute overflow-hidden bg-[#edf6ff] flex flex-col top-[120%] -left-3/4 w-[15rem] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <Link to="/about-us" className="hover:bg-primary/15 px-5 py-3">
+                <a href="/about-us" className="hover:bg-primary/15 px-5 py-3">
                   About Us
-                </Link>
-                <Link to="/blogs" className="hover:bg-primary/15 px-5 py-3">
+                </a>
+                <a href="/blogs" className="hover:bg-primary/15 px-5 py-3">
                   Blogs
-                </Link>
+                </a>
               </div>
             </div>
-            <Link to="/contact" className="primary-btn">
+            <a href="/contact" className="primary-btn">
               Contact Us
-            </Link>
+            </a>
           </div>
           <button
             title="Menu"
@@ -76,31 +76,31 @@ const Header = () => {
         </div>
         <div className="py-4 px-7 flex flex-col gap-4">
           {websitePagesLinks.map(({ id, link, title }) => (
-            <Link
+            <a
               onClick={() => setIsOpen(false)}
               key={id}
               className="text-2xl font-medium duration-300 link"
-              to={link}
+              href={link}
             >
               {title}
-            </Link>
+            </a>
           ))}
-          <Link
-            to="/about-us"
+          <a
+            href="/about-us"
             className="text-2xl font-medium duration-300 link"
           >
             About Us
-          </Link>
-          <Link to="/blogs" className="text-2xl font-medium duration-300 link">
+          </a>
+          <a href="/blogs" className="text-2xl font-medium duration-300 link">
             Blogs
-          </Link>
-          <Link
+          </a>
+          <a
             onClick={() => setIsOpen(false)}
-            to="/contact"
+            href="/contact"
             className="text-2xl font-medium duration-300 link"
           >
             Contact Us
-          </Link>
+          </a>
         </div>
       </Drawer>
     </div>

@@ -19,10 +19,6 @@ import iosAppIcon from "./assets/icons/ios-app.png";
 import androidAppIcon from "./assets/icons/android-app.png";
 import flutterAppIcon from "./assets/icons/flutter-app.png";
 import hybridAppIcon from "./assets/icons/hybrid-app.png";
-// import iosAppIcon from "./assets/icons/ios-development.png";
-// import androidAppIcon from "./assets/icons/android-development.png";
-// import flutterAppIcon from "./assets/icons/flutter-development.png";
-// import hybridAppIcon from "./assets/icons/hybrid-app-development.png";
 
 // all services images
 import service1 from "./assets/services-details/web-development1.webp";
@@ -33,6 +29,7 @@ import service5 from "./assets/services-details/data-engineering-1.webp";
 import service6 from "./assets/services-details/web3-1.webp";
 import service7 from "./assets/services-details/software-development-1.webp";
 import service8 from "./assets/services-details/iot-1.webp";
+import service9 from "./assets/services-details/blockchain2.webp";
 
 // clients
 import client1 from "./assets/client-1.png";
@@ -345,6 +342,20 @@ export const allServices = [
       "Connects and manages devices seamlessly.",
     ],
   },
+  {
+    id: 9,
+    img: service9,
+    title: "Blockchain Development",
+    link: "/services/blockchain-development",
+    smallPara:
+      "Blockchain development is transforming industries by providing secure, transparent, and decentralized solutions. Whether it’s building smart contracts, decentralized applications (dApps), or blockchain-based financial solutions, this technology enhances trust and efficiency.\n\nBusinesses leverage blockchain to streamline transactions, ensure data integrity, and enable innovative digital ecosystems with trustless security.",
+    keyBenefits: [
+      "Secure and transparent decentralized solutions.",
+      "Smart contract development for automation and trust.",
+      "Blockchain-powered financial and business applications.",
+      "Enhanced security and data integrity with blockchain technology.",
+    ],
+  },
 ];
 
 // trusted clients
@@ -505,6 +516,81 @@ export const webPortfolio = [
     img: require("./assets/web_projects/6.webp"),
     title: "V Talkz",
   },
+  {
+    id: 7,
+    img: require("./assets/web_projects/5GHighspeedinternet.png"),
+    title: "5G Highspeed Internet",
+  },
+  {
+    id: 8,
+    img: require("./assets/web_projects/ASk.png"),
+    title: "Ask",
+  },
+  {
+    id: 9,
+    img: require("./assets/web_projects/Bayut – UAE Property Search.png"),
+    title: "Bayut – UAE Property Search",
+  },
+  {
+    id: 10,
+    img: require("./assets/web_projects/Chatlet Knotopian.png"),
+    title: "Chatlet Knotopian",
+  },
+  {
+    id: 11,
+    img: require("./assets/web_projects/Cleveland Clinic.png"),
+    title: "Cleveland Clinic",
+  },
+  {
+    id: 12,
+    img: require("./assets/web_projects/CommonSpirit.png"),
+    title: "CommonSpirit",
+  },
+  {
+    id: 13,
+    img: require("./assets/web_projects/Evans Francis.jpg"),
+    title: "Evans Francis",
+  },
+  {
+    id: 14,
+    img: require("./assets/web_projects/Houston Methodist.png"),
+    title: "Houston Methodist",
+  },
+  {
+    id: 15,
+    img: require("./assets/web_projects/Just Kids Pediatrics.png"),
+    title: "Just Kids Pediatrics",
+  },
+  {
+    id: 16,
+    img: require("./assets/web_projects/One Medical.png"),
+    title: "One Medical",
+  },
+  {
+    id: 17,
+    img: require("./assets/web_projects/Rejoice Talent Academy.png"),
+    title: "Rejoice Talent Academy",
+  },
+  {
+    id: 18,
+    img: require("./assets/web_projects/Simple Practice.png"),
+    title: "Simple Practice",
+  },
+  {
+    id: 19,
+    img: require("./assets/web_projects/Synergy Private Health.png"),
+    title: "Synergy Private Health",
+  },
+  {
+    id: 20,
+    img: require("./assets/web_projects/Tia Health.png"),
+    title: "Tia Health",
+  },
+  {
+    id: 21,
+    img: require("./assets/web_projects/youvi.png"),
+    title: "Youvi",
+  },
 ];
 
 // portfolio images (app development)
@@ -528,6 +614,26 @@ export const appPortfolio = [
     id: 4,
     img: require("./assets/app_projects/4.webp"),
     title: "House of Deliverance",
+  },
+  {
+    id: 5,
+    img: require("./assets/app_projects/Barbera.jpg"),
+    title: "Barbera",
+  },
+  {
+    id: 6,
+    img: require("./assets/app_projects/college nutritionist.jpg"),
+    title: "College Nutritionist",
+  },
+  {
+    id: 7,
+    img: require("./assets/app_projects/DreaMate.jpg"),
+    title: "DreaMate",
+  },
+  {
+    id: 8,
+    img: require("./assets/app_projects/Klikomics.jpg"),
+    title: "Klikomics",
   },
 ];
 

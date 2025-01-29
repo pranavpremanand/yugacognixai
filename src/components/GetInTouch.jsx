@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import FadeUp from "./FadeUp";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const GetInTouch = () => {
   return (
@@ -33,9 +34,12 @@ export default GetInTouch;
 export const InquiryForm = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(allServices[0].title);
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const dropdownRef = useRef(null);
+  const recaptchaRef = useRef(null);
   const { setSpinner } = useContext(SpinnerContext);
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -53,24 +57,24 @@ export const InquiryForm = () => {
   });
 
   useEffect(() => {
-    // Handler for clicking outside of the dropdown
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setDropdownOpen(false); // Close the dropdown
+        setDropdownOpen(false);
       }
     };
 
-    // Add event listener
     document.addEventListener("mousedown", handleClickOutside);
-
-    // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  // handle form submit click
   const handleFormSubmit = async (values) => {
+    if (!isCaptchaVerified) {
+      toast.error("Please complete the reCAPTCHA verification");
+      return;
+    }
+
     setSpinner(true);
 
     var emailBody = "Name: " + values.name + "\n\n";
@@ -79,34 +83,40 @@ export const InquiryForm = () => {
     emailBody += "Service Needed: " + selectedService + "\n\n";
     emailBody += "Message:\n" + values.message;
 
-    // Construct the request payload
     var payload = {
       to: clientDetails.email,
       subject: values.subject,
       body: emailBody,
     };
 
-    await fetch("https://smtp-api-tawny.vercel.app/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        if (res.error) {
-          toast.error(res.error);
-        } else {
-          toast.success("Email sent successfully");
-          reset();
-          navigate("/thank-you");
+    try {
+      const response = await fetch(
+        "https://smtp-api-tawny.vercel.app/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
         }
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      })
-      .finally(() => setSpinner(false));
+      );
+
+      const res = await response.json();
+
+      if (res.error) {
+        toast.error(res.error);
+      } else {
+        toast.success("Email sent successfully");
+        reset();
+        recaptchaRef.current.reset();
+        setIsCaptchaVerified(false);
+        navigate("/thank-you");
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setSpinner(false);
+    }
   };
   return (
     <FadeUp>
@@ -254,6 +264,15 @@ export const InquiryForm = () => {
                 })}
               />
               <p className="text-blue-900">{errors.message?.message}</p>
+            </div>
+            <div className="mt-4">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey="6Lf7g8YqAAAAAB1WsfCwhyYVM2vqV1BO0bp4HMdi"
+                onChange={(value) => setIsCaptchaVerified(!!value)}
+                theme="light"
+                className="transform scale-90 origin-left"
+              />
             </div>
             <button
               type="submit"
