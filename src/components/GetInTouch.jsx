@@ -226,7 +226,7 @@ export const InquiryForm = () => {
                 <div
                   name=""
                   id=""
-                  className="outline-none rounded-lg overflow-hidden top-[5rem] absolute bg-gray-50 w-full"
+                  className="z-10 outline-none rounded-lg overflow-hidden top-[5rem] absolute bg-gray-50 w-full"
                 >
                   {allServices.map((item) => (
                     <div
