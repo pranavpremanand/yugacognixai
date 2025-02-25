@@ -35,8 +35,19 @@ const Form = () => {
     if (!isCaptchaVerified) {
       toast.error("Please complete the reCAPTCHA verification");
       return;
+    } else {
+      const token = recaptchaRef.current.getValue();
+      const res = await fetch("https://yugacognixai-backend.vercel.app/api/verify-recaptcha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+
+      const result = await res.json();
+      console.log("Verification Result:", result);
     }
 
+    return;
     setSpinner(true);
 
     var emailBody = "Name: " + values.name + "\n\n";
