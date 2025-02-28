@@ -52,6 +52,7 @@ const Form = () => {
 
         if (result.success) {
           setIsCaptchaVerified(true);
+          toast.success("Verification successful!");
         } else {
           toast.error("Verification failed. Please try again.");
           return;
