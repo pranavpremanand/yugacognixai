@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { clientDetails } from "../constants";
 import ReCAPTCHA from "react-google-recaptcha";
+import { validateToken } from "./utils/helper";
 
 const Form = () => {
   const { setSpinner } = useContext(SpinnerContext);
@@ -38,18 +39,8 @@ const Form = () => {
     } else {
       const token = recaptchaRef.current.getValue();
       try {
-        const res = await fetch(
-          "https://yugacognixai-backend.vercel.app/api/verify-recaptcha",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ token }),
-          }
-        );
-
+        const res = validateToken(token);
         const result = await res.json();
-        console.log("Verification Result:", result);
-
         if (result.data.success) {
           setIsCaptchaVerified(true);
           toast.success("Verification successful!");
