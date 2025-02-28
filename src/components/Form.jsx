@@ -50,7 +50,7 @@ const Form = () => {
         const result = await res.json();
         console.log("Verification Result:", result);
 
-        if (result.success) {
+        if (result.data.success) {
           setIsCaptchaVerified(true);
           toast.success("Verification successful!");
         } else {
