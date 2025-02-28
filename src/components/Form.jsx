@@ -54,9 +54,11 @@ const Form = () => {
           setIsCaptchaVerified(true);
         } else {
           toast.error("Verification failed. Please try again.");
+          return;
         }
       } catch (error) {
         toast.error("Verification failed. Please try again.");
+        return;
       }
     }
 
