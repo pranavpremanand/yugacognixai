@@ -39,7 +39,7 @@ const Form = () => {
     } else {
       const token = recaptchaRef.current.getValue();
       try {
-        const res = validateToken(token);
+        const res = await validateToken(token);
         const result = await res.json();
         if (result.data.success) {
           setIsCaptchaVerified(true);
