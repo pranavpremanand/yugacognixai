@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import FadeUp from "./FadeUp";
 import ReCAPTCHA from "react-google-recaptcha";
+import { validateToken } from "./utils/helper";
 
 const GetInTouch = () => {
   return (
@@ -73,6 +74,22 @@ export const InquiryForm = () => {
     if (!isCaptchaVerified) {
       toast.error("Please complete the reCAPTCHA verification");
       return;
+    } else {
+      const token = recaptchaRef.current.getValue();
+      try {
+        const res = await validateToken(token);
+        const result = await res.json();
+        if (result.data.success) {
+          setIsCaptchaVerified(true);
+          toast.success("Verification successful!");
+        } else {
+          toast.error("Verification failed. Please try again.");
+          return;
+        }
+      } catch (error) {
+        toast.error("Verification failed. Please try again.");
+        return;
+      }
     }
 
     setSpinner(true);

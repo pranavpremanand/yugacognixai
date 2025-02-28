@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { ImSpinner3 } from "react-icons/im";
 import { clientDetails } from "../constants";
 import ReCAPTCHA from "react-google-recaptcha";
+import { validateToken } from "./utils/helper";
 
 const PopupForm = ({ storageKey }) => {
   const [isOpen, setIsOpen] = React.useState(true);
@@ -23,6 +24,22 @@ const PopupForm = ({ storageKey }) => {
     if (!isCaptchaVerified) {
       toast.error("Please complete the reCAPTCHA verification");
       return;
+    } else {
+      const token = recaptchaRef.current.getValue();
+      try {
+        const res = await validateToken(token);
+        const result = await res.json();
+        if (result.data.success) {
+          setIsCaptchaVerified(true);
+          toast.success("Verification successful!");
+        } else {
+          toast.error("Verification failed. Please try again.");
+          return;
+        }
+      } catch (error) {
+        toast.error("Verification failed. Please try again.");
+        return;
+      }
     }
 
     setSpinner(true);
