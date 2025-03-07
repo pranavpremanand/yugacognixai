@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import FadeUp from "./FadeUp";
 import ReCAPTCHA from "react-google-recaptcha";
 import { validateToken } from "./utils/helper";
+import axios from "axios";
 
 const GetInTouch = () => {
   return (
@@ -104,32 +105,26 @@ export const InquiryForm = () => {
       to: clientDetails.email,
       subject: values.subject,
       body: emailBody,
+      name: "Yugacognix AI",
     };
 
     try {
-      const response = await fetch(
-        "https://smtp-api-tawny.vercel.app/send-email",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
+      const response = await axios.post(
+        "https://send-mail-redirect-boostmysites.vercel.app/send-email",
+        payload
       );
 
-      const res = await response.json();
-
-      if (res.error) {
-        toast.error(res.error);
-      } else {
+      if (response.data.success) {
         toast.success("Email sent successfully");
         reset();
         recaptchaRef.current.reset();
         setIsCaptchaVerified(false);
         navigate("/thank-you");
+      } else {
+        toast.error(response.data.message);
       }
     } catch (error) {
+      console.log(error);
       toast.error(error.message);
     } finally {
       setSpinner(false);

@@ -6,6 +6,7 @@ import { ImSpinner3 } from "react-icons/im";
 import { clientDetails } from "../constants";
 import ReCAPTCHA from "react-google-recaptcha";
 import { validateToken } from "./utils/helper";
+import axios from "axios";
 
 const PopupForm = ({ storageKey }) => {
   const [isOpen, setIsOpen] = React.useState(true);
@@ -52,32 +53,26 @@ const PopupForm = ({ storageKey }) => {
       to: clientDetails.email,
       subject: data.subject,
       body: emailBody,
+      name:"Yugacognix AI"
     };
 
     try {
-      const response = await fetch(
-        "https://smtp-api-tawny.vercel.app/send-email",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
+      const response = await axios.post(
+        "https://send-mail-redirect-boostmysites.vercel.app/send-email",
+        payload
       );
 
-      const res = await response.json();
-
-      if (res.error) {
-        toast.error(res.error);
-      } else {
+      if (response.data.success) {
         recaptchaRef.current.reset();
         setIsCaptchaVerified(false);
         toast.success("Form submitted successfully");
         reset();
         closePopup();
+      } else {
+        toast.error(response.data.message);
       }
     } catch (error) {
+      console.log(error);
       toast.error(error.message);
     } finally {
       setSpinner(false);

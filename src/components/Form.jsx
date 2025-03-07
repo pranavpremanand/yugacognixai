@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import { clientDetails } from "../constants";
 import ReCAPTCHA from "react-google-recaptcha";
 import { validateToken } from "./utils/helper";
+import axios from "axios";
 
 const Form = () => {
   const { setSpinner } = useContext(SpinnerContext);
@@ -66,29 +67,30 @@ const Form = () => {
       to: clientDetails.email,
       subject: values.subject,
       body: emailBody,
+      name: "Yugacognix AI",
     };
 
-    await fetch("https://smtp-api-tawny.vercel.app/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        if (res.error) {
-          toast.error(res.error);
-        } else {
-          toast.success("Email sent successfully");
-          reset();
-          navigate("/thank-you");
-        }
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      })
-      .finally(() => setSpinner(false));
+    try {
+      const response = await axios.post(
+        "https://send-mail-redirect-boostmysites.vercel.app/send-email",
+        payload
+      );
+
+      if (response.data.success) {
+        toast.success("Email sent successfully");
+        reset();
+        recaptchaRef.current.reset();
+        setIsCaptchaVerified(false);
+        navigate("/thank-you");
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    } finally {
+      setSpinner(false);
+    }
   };
   return (
     <div className="flex flex-col items-start gap-3 group">
