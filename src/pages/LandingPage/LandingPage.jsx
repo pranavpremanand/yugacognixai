@@ -26,7 +26,7 @@ const IndustriesWeServe = lazy(() =>
   import("../../components/IndustriesWeServe")
 );
 const BrandLogos = lazy(() => import("../../components/BrandLogos"));
-const Portfolio = lazy(() => import("../../components/Portfolio"));
+const LandingPagePortfolio = lazy(() => import("../../components/LandingPagePortfolio"));
 const Banner = lazy(() => import("../../components/LandingPage/Banner"));
 
 const LandingPage = ({ page }) => {
@@ -114,7 +114,7 @@ const LandingPage = ({ page }) => {
       <CallToAction />
       <IndustriesWeServe />
       <WhyChooseUs />
-      <Portfolio />
+      <LandingPagePortfolio isWebDevelopment={isWebDevelopment} />
       <CallToAction />
       <Testimonials />
       <GetInTouch />

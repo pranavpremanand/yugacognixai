@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import Header from "../components/Website/Header";
 import PageBanner from "../components/Website/PageBanner";
 import CallToAction from "../components/CallToAction";
 import Footer from "../components/Website/Footer";
 import banner from "../assets/portfolio-banner.webp";
 import FadeUp from "../components/FadeUp";
-import { appPortfolio, sharedPortfolio, webPortfolio } from "../constants";
+import { appPortfolio, webPortfolio, aiPortfolio, blockchainPortfolio } from "../constants";
 import GetInTouch from "../components/GetInTouch";
 import WhyChooseUs from "../components/WhyChooseUs";
 
@@ -33,22 +33,77 @@ const PortfolioPage = () => {
 export default PortfolioPage;
 
 const Works = () => {
+  const [activeFilter, setActiveFilter] = useState("all");
+  
+  // Combine all portfolios and remove duplicates based on title
+  const allPortfolio = useMemo(() => {
+    const combined = [...webPortfolio, ...appPortfolio, ...aiPortfolio, ...blockchainPortfolio];
+    const uniqueMap = new Map();
+    
+    combined.forEach(item => {
+      if (!uniqueMap.has(item.title)) {
+        uniqueMap.set(item.title, item);
+      }
+    });
+    
+    return Array.from(uniqueMap.values());
+  }, []);
+  
+  // Filter portfolio based on selected filter
+  const filteredPortfolio = useMemo(() => {
+    if (activeFilter === "all") {
+      return allPortfolio;
+    } else if (activeFilter === "web") {
+      return webPortfolio;
+    } else if (activeFilter === "app") {
+      return appPortfolio;
+    } else if (activeFilter === "ai") {
+      return aiPortfolio;
+    } else if (activeFilter === "blockchain") {
+      return blockchainPortfolio;
+    }
+    return allPortfolio;
+  }, [activeFilter, allPortfolio]);
+  
+  // Filter button component
+  const FilterButton = ({ label, value }) => (
+    <button
+      onClick={() => setActiveFilter(value)}
+      className={`px-4 py-2 rounded-md transition-all duration-300 ${
+        activeFilter === value
+          ? "bg-primary text-white"
+          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+      }`}
+    >
+      {label}
+    </button>
+  );
+  
   return (
     <FadeUp>
-      <div id="portfolio" className="  py-[2rem] relative">
+      <div id="portfolio" className="py-[2rem] relative">
         <div className="blue-bg-shape rotate-[-45deg] top-[2rem] right-3 -z-10"></div>
         <div className="blurred-red-circle h-[25rem] w-[25rem] bottom-[-2rem] left-[-2rem] -z-10"></div>
         <div className="wrapper">
-          <div className="flex flex-col items-center gap-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-              {appPortfolio.concat(webPortfolio,sharedPortfolio).map((item) => (
+          <div className="flex flex-col items-center gap-8">
+            {/* Filter buttons */}
+            <div className="flex flex-wrap justify-center gap-3 mb-4">
+              <FilterButton label="All Projects" value="all" />
+              <FilterButton label="Web Development" value="web" />
+              <FilterButton label="App Development" value="app" />
+              <FilterButton label="AI & ML" value="ai" />
+              <FilterButton label="Blockchain" value="blockchain" />
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10">
+              {filteredPortfolio.map((item) => (
                 <div
-                  key={item.id}
+                  key={item.id + item.title}
                   className="flex justify-self-center aspect-square flex-col gap-3 rounded-md overflow-hidden relative group w-full shadow-2xl"
                 >
                   <img
                     src={item.img}
-                    alt=""
+                    alt={item.title}
                     width="300"
                     height="300"
                     loading="lazy"
@@ -58,6 +113,9 @@ const Works = () => {
                     <h3 className="font-medium text-center text-white text-xl">
                       {item.title}
                     </h3>
+                    <p className="text-center text-white text-sm opacity-80">
+                      {item.service}
+                    </p>
                   </div>
                 </div>
               ))}

@@ -365,25 +365,25 @@ export const industries = [
   {
     id: 2,
     title: "Finance",
-    img: require("./assets/industries/Fintech.webp"),
+    img: require("./assets/industries/Finance.webp"),
     desc: "Revolutionizing financial services with secure payment systems, fraud detection, and automated trading.",
   },
   {
     id: 3,
     title: "E-commerce",
-    img: require("./assets/industries/E-commerce & Retail.webp"),
+    img: require("./assets/industries/E-commerce.webp"),
     desc: "Enhancing online shopping with personalized recommendations, inventory management, and secure transactions.",
   },
   {
     id: 4,
     title: "Real Estate",
-    img: require("./assets/industries/Insurance.webp"), // Using Insurance as a substitute for Real Estate
+    img: require("./assets/industries/Real Estate.webp"),
     desc: "Transforming property management with virtual tours, smart contracts, and predictive analytics.",
   },
   {
     id: 5,
     title: "Travel & Hospitality",
-    img: require("./assets/industries/Hospitality.webp"),
+    img: require("./assets/industries/Travel & Hospitality.webp"),
     desc: "Elevating guest experiences with personalized recommendations, virtual concierge, and smart room controls.",
   },
   {
@@ -630,50 +630,5 @@ export const blockchainPortfolio = [
     img: require("./assets/portfolio/Blockchain Development/Wager.png"),
     title: "Wager",
     service: "Blockchain Development"
-  }
-];
-
-// Shared portfolio for the portfolio page
-export const sharedPortfolio = [
-  ...webPortfolio.slice(0, 4),
-  ...appPortfolio.slice(0, 4),
-  ...aiPortfolio.slice(0, 2),
-  ...blockchainPortfolio.slice(0, 2)
-];
-
-// Industries we serve
-export const industriesCompanyServe = industries;
-
-// Testimonials
-export const testimonials = [
-  {
-    id: 1,
-    name: "John Smith",
-    designation: "CEO, TechCorp",
-    review: "YugaCognixAI transformed our business with their exceptional web development services. Their team's expertise and dedication resulted in a website that not only looks stunning but also performs flawlessly."
-  },
-  {
-    id: 2,
-    name: "Sarah Johnson",
-    designation: "Marketing Director, InnovateCo",
-    review: "The mobile app developed by YugaCognixAI exceeded our expectations. Their attention to detail and user-centric approach has helped us achieve remarkable engagement metrics and positive user feedback."
-  },
-  {
-    id: 3,
-    name: "Michael Chen",
-    designation: "CTO, FutureTech",
-    review: "Working with YugaCognixAI on our AI implementation was a game-changer. Their team's deep understanding of machine learning and artificial intelligence helped us automate critical processes and gain valuable insights."
-  },
-  {
-    id: 4,
-    name: "Emily Rodriguez",
-    designation: "Product Manager, NextGen Solutions",
-    review: "YugaCognixAI delivered an outstanding blockchain solution that has revolutionized our supply chain management. Their technical expertise and innovative approach have given us a significant competitive advantage."
-  },
-  {
-    id: 5,
-    name: "David Wilson",
-    designation: "Founder, StartupX",
-    review: "From concept to execution, YugaCognixAI guided us through the entire development process with professionalism and expertise. Their team's commitment to quality and innovation is truly commendable."
   }
 ];
