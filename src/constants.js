@@ -459,18 +459,12 @@ export const webPortfolio = [
   },
   {
     id: 6,
-    img: require("./assets/portfolio/Web Development/Banjaaran.png"),
-    title: "Banjaaran",
-    service: "Web Development"
-  },
-  {
-    id: 7,
     img: require("./assets/portfolio/Web Development/bayut.png"),
     title: "Bayut",
     service: "Web Development"
   },
   {
-    id: 8,
+    id: 7,
     img: require("./assets/portfolio/Web Development/bbbshop.png"),
     title: "BBB Shop",
     service: "Web Development"
