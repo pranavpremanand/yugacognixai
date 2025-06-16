@@ -73,7 +73,7 @@ const Testimonials = () => {
         <div ref={sliderRef} className="keen-slider">
           {testimonials
             .concat(testimonials)
-            .map(({ id, img, title, name, description }, index) => (
+            .map(({ id, img, title, name, review }, index) => (
               <div key={id} className="keen-slider__slide">
                 <div className="flex flex-col items-center bg-background p-5 mx-2 rounded-xl h-full">
                   {/* <img
@@ -87,7 +87,7 @@ const Testimonials = () => {
                     <RiDoubleQuotesR className="text-7xl text-primary/20" />
                   </div>
                   <div className="h-full flex flex-col justify-between">
-                    <p className="description">" {description} "</p>
+                    <p className="description">" {review} "</p>
                     <div className="w-full flex gap-3 items-center mt-4">
                       {/* <div className="min-w-[4.5rem] max-w-[4.5rem] min-h-[4.5rem] max-h-[4.5rem] rounded-full overflow-hidden bg-gray-300"></div> */}
                       <div className="flex flex-col gap-1">
