@@ -15,7 +15,7 @@ const ServicePageLayout = () => {
       <Header />
       {/* <ServiceDetailsBanner /> */}
       <div className="wrapper pt-[5rem]">
-        <div className="pt-[5rem] pb-[2rem] grid md:grid-cols-[30%_65%] gap-10">
+        <div className="pt-[5rem] pb-[2rem] grid md:grid-cols-[25%_1fr] gap-10">
           <div className="w-full flex flex-col gap-10">
             <div
                

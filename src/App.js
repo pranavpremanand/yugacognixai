@@ -53,6 +53,7 @@ const BlockchainDevelopment = lazy(() =>
   import("./pages/ServicesPages/Blockchain")
 );
 const IoT = lazy(() => import("./pages/ServicesPages/IoT"));
+const ERPDevelopment = lazy(() => import("./pages/ServicesPages/ERPDevelopment"));
 const LandingPage = lazy(() => import("./pages/LandingPage/LandingPage"));
 const Industries = lazy(() => import("./pages/Industries"));
 const Blogs = lazy(() => import("./pages/Blogs"));
@@ -243,10 +244,11 @@ function App() {
                     element={<SoftwareEngineering />}
                   />
                   <Route
-                    path="blockchain-development"
+                    path="blockchain"
                     element={<BlockchainDevelopment />}
                   />
-                  <Route path="iot" element={<IoT />} />
+                  <Route path="iot-development" element={<IoT />} />
+                  <Route path="erp-development" element={<ERPDevelopment />} />
                 </Route>
 
                 {/* Generic Routes */}

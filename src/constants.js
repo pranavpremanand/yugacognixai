@@ -26,6 +26,7 @@ import service6 from "./assets/services-details/web3-1.webp";
 import service7 from "./assets/services-details/software-development-1.webp";
 import service8 from "./assets/services-details/iot-1.webp";
 import service9 from "./assets/services-details/blockchain2.webp";
+import service10 from "./assets/services-details/software-development-1.webp"; // Using software development image for ERP temporarily
 
 // clients
 import client1 from "./assets/client-1.png";
@@ -350,6 +351,20 @@ export const allServices = [
       "Increased transparency and auditability.",
       "Reduced costs by eliminating intermediaries.",
       "Improved trust through immutable record-keeping.",
+    ],
+  },
+  {
+    id: 10,
+    img: service10,
+    title: "ERP Development",
+    link: "/services/erp-development",
+    smallPara:
+      "Enterprise Resource Planning (ERP) systems are comprehensive business management solutions that integrate all facets of an operation, including planning, development, manufacturing, sales, and marketing. YugaCognix AI provides end-to-end ERP development services to help companies of all sizes improve operational efficiency, enhance business process visibility, and facilitate data-driven decision-making.",
+    keyBenefits: [
+      "Custom-built ERP solutions tailored to your specific business processes.",
+      "Seamless integration with existing systems and legacy software.",
+      "Enhanced operational efficiency and productivity.",
+      "Improved data visibility and decision-making capabilities.",
     ],
   },
 ];
